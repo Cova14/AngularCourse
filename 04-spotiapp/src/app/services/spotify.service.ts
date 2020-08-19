@@ -12,12 +12,17 @@ export class SpotifyService {
 
   getNewReleases() {
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQA38C5oy8JaNOsvxBV510WFpFHmF1EJuy-bo6U_OsK12WXVIAcF-QHjNhtF43y1H6A6G-EVnngDsd564DU'
+      'Authorization': 'Bearer BQC6g23L0WR4ooox7t794mmOaHYKRCJHgP6-QJBE9edRBOte5cK1G6dis7biJgArdu6TRTbs9Yau5PL8Bfs'
     });
 
-    this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers})
-      .subscribe(data => {
-        console.log(data);
-      })
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers});
+  }
+
+  getArtist(artist: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQC6g23L0WR4ooox7t794mmOaHYKRCJHgP6-QJBE9edRBOte5cK1G6dis7biJgArdu6TRTbs9Yau5PL8Bfs'
+    });
+
+    return this.http.get(`https://api.spotify.com/v1/search?q=${artist}&type=artist&limit=15`, {headers});
   }
 }
