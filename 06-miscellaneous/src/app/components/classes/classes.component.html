@@ -19,3 +19,20 @@
   >
     Change
 </button>
+
+<br><br>
+<h3>Asyncronous Process</h3>
+<button
+  class="btn btn-primary"
+  type="button"
+  (click)="execute()"
+  [disabled]="loading"
+>
+  <i
+    [ngClass]="{'fa-save': !loading, 'fa-sync fa-spin': loading}"
+    class="fa"
+  >
+  </i>
+    <span *ngIf="!loading">Guardar Cambios</span>
+    <span *ngIf="loading">Espere un momento</span>
+</button>
