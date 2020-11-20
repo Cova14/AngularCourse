@@ -3,3 +3,8 @@ export class UsuarioModel {
   password: string;
   nombre: string;
 }
+
+export class LoginModel {
+	email: string;
+  password: string;
+}
